@@ -16,3 +16,11 @@ rosettaSrv.factory('Portal', ['$resource',
             get: {method: 'GET', isArray: false}
         });
     }]);
+
+rosettaSrv.factory('Vm', ['$resource',
+    function ($resource) {
+        return $resource('api/vm/:action/:id', { action: "@action", id: "@id" }, {
+            query: {method: 'GET', isArray: true},
+            get: {method: 'GET', isArray: false}
+        });
+    }]);

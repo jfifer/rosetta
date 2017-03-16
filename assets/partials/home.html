@@ -22,5 +22,71 @@
         {{username}} <i class="fa fa-rebel clickable" ng-click="logout()"></i>
       </div>
     </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xxlg-12 col-xlg-12 col-lg-12 col-md-12 col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>Query Parameters</h4>
+            </div>
+            <div class="panel-body">
+              <div class="form-group query-group">
+                <ul class="parameter">
+                  <li ng-class="inSelected(server.fs, 'server') ? 'selected' : null" ng-repeat="server in featureServers track by $index" class="clickable" ng-click="fsSelectionChanged(server.fs)">{{server.fs}}</li>
+                </ul>
+              </div>
+              <div class="form-group query-group">
+                <ul class="parameter">
+                  <li ng-class="inSelected(context.context, 'context') ? 'selected' : null" ng-repeat="context in contexts track by $index" class="clickable" ng-click="ctxSelectionChanged(context.context)">{{context.context}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xxlg-12 col-xlg-12 col-lg-12 col-md-12 col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>Date Parameters</h4>
+            </div>
+            <div class="panel-body">
+              <div class="col-md-6 col-sm-6 col-lg-6">
+                <div class="form-group">
+                  <input type="radio" name="dates" value="fixed" ng-model="dateRange"/>
+                  <label for="dates">Fixed Date Range</label>
+                </div>
+                <div class="form-group">
+                  <label for="startDate">Start</label>
+                  <input name="startDate" calendar="" ng-model="startDate" />
+                </div>
+                <div class="form-group">
+                  <label for="endDate">End</label>
+                  <input name="endDate" calendar="" ng-model="endDate" />
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-lg-6">
+                <div class="form-group">
+                  <input type="radio" name="dates" value="relative" ng-model="dateRange" />
+                  <label for="dates">Relative Date Range</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xxlg-12 col-xlg-12 col-lg-12 col-md-12 col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>Result Parameters</h4>
+            </div>
+            <div class="panel-body">
+              <p>charts goes here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
